@@ -1,0 +1,209 @@
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.2); 
+  transition: transform 3s ease-out, opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide.active img {
+  transform: scale(1); 
+}
+
+
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.3); /* 검은색 + 50% 투명 */
+}
+
+.banner_txt {color: #FFF; font-weight: 600; left: 300px; bottom: 250px; z-index: 6; position: absolute;}
+
+.banner_txt > h3 {font-size: 5rem; line-height: 7rem;  font-family: 'Freesentation-4Regular'; font-weight: 400;}
+.banner_txt > h3 > span  {font-size: 7rem; color: #2739a6;     font-family: 'Freesentation-7Bold';}
+
+.scroll-down {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   z-index: 99;
+}
+
+.scroll-down span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  animation: scroll-down 1.5s infinite ease-in-out;
+}
+
+.scroll-down > p {font-size: 12px; position: absolute; bottom: -25px; color: #FFF; text-align: center;}
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+
+.fade-text {
+  font-size: 2rem;
+  background: white;
+  padding: 20px;
+  margin: 50px auto;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sp_con {width: 100%; height: 100vh;}
+
+
+
+/* 컨텐츠 자체 */
+
+
+.fade_black {width: 100%; background: linear-gradient(to top, #4B453A, #222); padding: 100px; text-align: center;}
+.fade_black > span {display: block; color: #c5cefc; font-size: 18px; margin-bottom: 30px; font-weight: 600;}
+.fade_black > p {color: #FFF; font-size: 2.8rem; font-weight: 500; width: 100%;}
+
+
+/* 납품정보 */
+
+.pro_img {width: 100%; position: relative; height: 720px; }
+.pro_img > img {width: 100%; height: 100%; object-fit:cover; position: relative;}
+.pro_img > .img_txt {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}
+.img_txt > h4 {font-size: 50px; color: #ccc;  text-align: center; font-size: 30px;}
+.img_txt > h4 > span {color: #fff; font-size: 60px; line-height: 75px;}
+.img_txt > h4 > span > span {color: #2739a6;}
+
+/* 사업 영역 */
+.bs_con_in {height: 100%; position: relative; margin-bottom: 60px;}
+.bs_con_in > .pro_img { height: 500px; position: relative;}
+.bs_con_in > .pro_img > img {height: 100%; object-fit: cover;}
+
+/* .pro_img.p_b_img {background: url(/img/bn_2.jpg); width: 100%; height: 700px; background-size: cover; background-position: center;} */
+
+.bs_p_txt { position: absolute; bottom: 50px; left: 250px; }
+
+.bs_p_txt > h4 {color: #FFF; font-size: 50px;}
+.bs_p_txt > h6 {font-size: 42px; color: #FFF; line-height: 50px;}
+.bs_p_txt > h6 > span {color: #c5cefc;}
+.b_lcon_t { padding-left: 250px; color: #222; padding-top:20px;  font-size: 18px; }
+
+.bs_con_in.in_right .bs_p_txt {text-align: right; right: 250px;}
+.in_right .b_lcon_t {text-align: right; padding-right: 250px; padding-left: 0;}
+.b_txt_line {display: block; width: 1px; height: 37%; background-color: #b5c1fa; position: absolute; left: 220px; bottom: 0;}
+
+.bs_con_in.in_right .b_txt_line {left: auto; right: 220px;}
+
+
+
+/* 제품별 제안 */
+.pd_inner {margin-top: 10px;}
+.prod_title {font-size: 120px; color: #eee;  margin-left: 220px; position: absolute; top: -100px;}
+.prod_box {padding-left: 20px; padding-right: 20px;}
+.prod_bg {background-color: #f5f5f5; width: 100%; padding: 50px 0;}
+.prod_item_img {width: auto; border-radius: 50px; overflow: hidden; height: 100%;}
+.prod_item_img > img {object-fit: cover; width: 100%; height: 100%;}
+.prod_li {padding-top: 15px; gap: 30px 0;}
+.pd_con {padding-top: 20px;}
+.prod_item > span {color: #fff; background-color: #2739a6; font-size: 24px; display: block; text-align: center; width: 250px; height: 80px; border-radius: 50px 0 50px 0; line-height: 80px;  bottom: 0; right: 0; position: absolute;}
+.prod_item {position: relative; overflow: hidden; height: 410px;}
+.swiper-slide.prod_item {height: 410px;}
+.nonlogin_slide .swiper-pagination {
+  position: relative;
+  margin-top: 40px;
+  display: flex
+;
+  justify-content: center;
+  gap: 0 25px;
+}
+
+
+
+.nonlogin_slide .swiper-button-next, .nonlogin_slide .swiper-button-prev {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.nonlogin_slide .swiper-button-next::after, .nonlogin_slide .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.nonlogin_slide .swiper-pagination-bullet-active {
+  background-color: #626262;
+}
+.info_con {background: url(../img/info.png); width: 100%; height: 900px; background-size: cover; background-repeat: no-repeat; background-position: center bottom; object-fit: cover; position: relative;}
+.info_con > .info_b_txt {text-align: center; color: #FFF; font-size: 52px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;}
+.info_b_txt > p {margin-bottom: 30px;}
+.info_b_txt > p > span {color: #2739a6; }
+.info_con {
+  transform: scaleX(0); 
+  opacity: 0;
+}
+
+.aos-animate.info_con {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: transform 1s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.s_b_btn {display: block; width: 350px; margin: 0 auto; background-color: #2739a6; text-align: center; font-size: 28px; color: #FFF; padding: 20px; border-radius: 50px 0 50px 0;}
+
+.top_btn {position: fixed; bottom: 50px; right: 50px; z-index: 999; width: 80px; height: 80px;}
+
+.m_bl_btn {position: fixed; right: 15px; bottom: 100px; background-color: #2739a6;  width: 80px; height: 80px; border-radius: 100px; z-index: 999; display: none;}
+.m_bl_btn > a {display: block; text-align: center; width: 100%; height: 100%; color: #FFF; font-size: 18px; line-height: 80px;}
+
+.tel_text {font-size: 40px; color: #FFF; margin-bottom: 10px;}
